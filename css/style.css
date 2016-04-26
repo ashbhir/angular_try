@@ -1,0 +1,35 @@
+.main_heading{
+  border-bottom: 0.4em solid grey;
+}
+
+.section {
+  margin-top: 2em;
+}
+
+.pen_icon{
+  fill: red;
+  width: 10px;
+  height: 20px;
+  text-align: center;
+}
+
+.pen_icon line{
+  stroke:red;
+}
+
+.bookmark_text{
+  display: inline;
+  margin: 0;
+}
+
+.bookmark{
+  margin: 10px 0;
+}
+
+.nav> li> a:hover, .nav> li> a:active, .nav> li> a:focus, .nav>li> a:visited{
+  background-color: yellow;
+}
+
+.active a:hover, .active a:active, .active a:link{
+  background-color: blue;
+}

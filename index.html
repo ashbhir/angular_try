@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <title>My Angular App</title>
+    <meta charset='utf-8'/>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/style.css" rel="stylesheet"/>
+
+  </head>
+  <body>
+  <div class="container">
+    <div class="section row">
+      <div class="col-md-8 col-sm-6 col-md-offset-2 col-sm-offset-3 text-center">
+        <h2 class="main_heading">Welcome to my bookmarks</h2>
+      </div>
+    </div>
+    <div class="section row" ng-app="Main" ng-controller="myCtrl">
+      <div class="col-md-4">
+        <ul class="nav navbar-left">
+          <li><a href="#" class="link_all" ng-click="setCurrentCategory(null)">All</a></li>
+          <li ng-repeat="category in categories" ng-class="{'active':isCurrentCategory(category)}"><a ng-click="setCurrentCategory(category)" href="#">{{category}}</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <div class="bookmark" ng-repeat="bookmark in data| filter: {category: currentCategory.toString()}: true">
+          <svg class="pen_icon" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="-5 -5 15 20">
+            <g transform="rotate(-150 2.5 10)">
+              <polygon points='0,5 2.5,0 5,5'></polygon>
+              <rect x='0' y='6' height='10' width='5'></rect>
+              <line x1='0' y1='18' x2='5' y2='18' stroke-width='2'></line>
+            </g>
+          </svg>
+          <p class="bookmark_text">{{bookmark.name}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    <!-- EXTERNAL SCRIPTS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
